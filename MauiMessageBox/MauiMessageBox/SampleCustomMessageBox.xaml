@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMessageBox.SampleCustomMessageBox"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Color="Transparent" CanBeDismissedByTappingOutsideOfPopup="False">
+    <Frame x:Name="ButtonMenuWrapper"                         
+  HasShadow="False" 
+  IsClippedToBounds="True" 
+  CornerRadius="20" 
+  Padding="0" 
+  HorizontalOptions="Center" 
+  VerticalOptions="Center">
+        <Grid  WidthRequest="300" HeightRequest="250"  x:Name="MainGrid"
+Padding="10"
+HorizontalOptions="CenterAndExpand" 
+VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="2"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="MessageTitleLabel" Text="Message"  LineBreakMode="WordWrap"  TextColor="Black" HorizontalOptions="CenterAndExpand"  VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" FontSize="16"/>
+            <StackLayout  Grid.Row="1" VerticalOptions="FillAndExpand">
+                <Label x:Name="MessageTextLabel" Text="This is a sample messagebox"  LineBreakMode="WordWrap" Padding="2" HorizontalTextAlignment="Center"  TextColor="Black" HorizontalOptions="CenterAndExpand"  VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" FontSize="16"/>
+            </StackLayout>
+            <StackLayout Margin="0,22,0,0" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Button x:Name="OkButton"  Grid.Column="2"  FontSize="16" HorizontalOptions="CenterAndExpand" 
+         VerticalOptions="CenterAndExpand" 
+         BorderColor="#871f26"  
+         BackgroundColor="#df4b55"  
+         TextColor="Black"  Command="{Binding CloseCommand}"
+         CornerRadius="25"  
+         BorderWidth="4" 
+         WidthRequest="140" Text="Show"
+         Margin="15,0,0,0" />
+            </StackLayout>
+        </Grid>
+    </Frame>
+</toolkit:Popup>
